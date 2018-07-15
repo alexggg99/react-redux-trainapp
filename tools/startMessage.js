@@ -1,5 +1,5 @@
 import colors from 'colors';
 
-/* eslink-disable no-console */
+/*eslint-disable no-console */
 
-// console.log('start app in dev mode...'.green);
+console.log('Starting app in dev mode...'.green);
