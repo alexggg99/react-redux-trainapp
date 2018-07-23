@@ -14,3 +14,7 @@ a.active {
 nav {
   padding-top: 20px;
 }
+
+.jumbotron-back {
+  background-color: white !important;
+}
