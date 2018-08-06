@@ -19,6 +19,10 @@ class ManageCoursePage extends React.Component {
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
+    if (!nextProps.course) {
+      this.setState({course: { id: "", title: "", watchHref: "", authorId: "", length: "", category: ""}});
+      return;
+    }
     if (nextProps.course.id != this.props.course.id){
       this.setState({course: Object.assign({}, nextProps.course)})
     }
