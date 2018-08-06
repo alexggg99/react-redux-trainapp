@@ -1,4 +1,6 @@
-export default function courseReducer(state = [], action) {
+import initialState from './initialState'
+
+export default function courseReducer(state = initialState.courses, action) {
   switch (action.type) {
     case 'CREATE_COURSE':
       debugger;

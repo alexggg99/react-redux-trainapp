@@ -15,13 +15,13 @@ const CourseList = ({courses}) => {
         </tr>
         </thead>
         <tbody>
-          {courses.map(course => <CourseListRow course={course}></CourseListRow>)}
+          {courses.map(course => <CourseListRow key={course.id} course={course}></CourseListRow>)}
         </tbody>
       </table>
     );
 };
 
-CourseList.protoTypes = {
+CourseList.propTypes = {
   courses: PropTypes.array.isRequired
 };
 

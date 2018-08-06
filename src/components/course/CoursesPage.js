@@ -20,7 +20,7 @@ class CoursesPage extends React.Component {
     }
 }
 
-CoursesPage.protoTypes = {
+CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
   createCourse: PropTypes.func.isRequired
 };
