@@ -1,5 +1,5 @@
 import authorApi from '../api/mockAuthorApi';
-import beginAjaxCall from './ajaxActions'
+import {beginAjaxCall} from './ajaxActions'
 
 export function loadAuthorsSuccess(authors) {
   return {type: 'LOAD_AUTHORS_SUCCESS', authors: authors};
