@@ -1,7 +1,11 @@
 import courseApi from '../api/mockCourseApi';
 
-export function createCourse(course) {
-  return {type: 'CREATE_COURSE', course: course};
+export function createCourseSuccess(course) {
+  return {type: 'CREATE_COURSE_SUCCESS', course: course};
+}
+
+export function updatedCourseSuccess(course) {
+  return {type: 'UPDATE_COURSE_SUCCESS', course: course};
 }
 
 export function loadCoursesSuccess(courses) {
@@ -15,5 +19,16 @@ export function loadCourses() {
     }).catch(error => {
       throw (error);
     });
+  };
+}
+
+export function saveCourse(course) {
+  return function (dispatch, getState) {
+    return courseApi.saveCourse(course).then(course => {
+      course.id ? dispatch(updatedCourseSuccess(course)) :
+      dispatch(createCourseSuccess(course));
+    }).catch(error => {
+      throw (error);
+    })
   };
 }
