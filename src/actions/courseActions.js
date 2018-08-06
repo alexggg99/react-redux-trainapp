@@ -1,4 +1,5 @@
 import courseApi from '../api/mockCourseApi';
+import beginAjaxCall from './ajaxActions'
 
 export function createCourseSuccess(course) {
   return {type: 'CREATE_COURSE_SUCCESS', course: course};
@@ -14,6 +15,7 @@ export function loadCoursesSuccess(courses) {
 
 export function loadCourses() {
   return function (dispatch) {
+    dispatch(beginAjaxCall());
     return courseApi.getAllCourses().then(courses => {
       dispatch(loadCoursesSuccess(courses));
     }).catch(error => {
