@@ -13,7 +13,7 @@ class ManageCoursePage extends React.Component {
       course: Object.assign({}, this.props.course),
       error: {},
       saving: false
-    }
+    };
     this.updateCourseState = this.updateCourseState.bind(this);
     this.saveCourse = this.saveCourse.bind(this);
   }
@@ -24,7 +24,7 @@ class ManageCoursePage extends React.Component {
       return;
     }
     if (nextProps.course.id != this.props.course.id){
-      this.setState({course: Object.assign({}, nextProps.course)})
+      this.setState({course: Object.assign({}, nextProps.course)});
     }
   }
 
